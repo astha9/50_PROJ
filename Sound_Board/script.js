@@ -1,0 +1,21 @@
+const sounds =['applause','boo','gasp','tada','FatalAttraction','ringtone']
+
+sounds.forEach(sound =>{
+    const btn=document.createElement('button')
+    btn.classList.add('btn')
+    btn.innerHTML=sound
+
+    btn.addEventListener('click',()=>{
+        stopSound()
+        document.getElementById(sound).play()
+    })
+
+    document.getElementById('buttons').appendChild(btn)
+})
+
+function stopSound(){
+   sounds.forEach((sound)=>{
+       const song =document.getElementById(sound)
+       song.pause()
+   })
+}
